@@ -4,7 +4,7 @@ import './App.css';
 const App = () => {
   return(
     <div>
-        <div>one div</div>
+        <Header />
         <div className="App">
             <ul>
                 <li>hhjlkjd</li>
@@ -15,5 +15,13 @@ const App = () => {
     </div>
   );
 }
-
+const Header = () => {
+    return(
+      <div>
+        <a>Home</a>
+        <a>News Feed</a>
+        <a>Messagerd</a>
+      </div>
+    );
+  }
 export default App;
