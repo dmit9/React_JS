@@ -5,22 +5,28 @@ const App = () => {
   return(
     <div>
         <Header />
-        <div className="App">
-            <ul>
-                <li>hhjlkjd</li>
-                <li>hyhthtthjd</li>
-                <li>eerrrlkjd</li>
-            </ul>
-        </div>
+        <Technologies />
     </div>
   );
+}
+const Technologies = () => {
+    return (
+        <div>
+            <ul>
+                <li>css</li>
+                <li>html</li>
+                <li>js</li>
+                <li>react</li>
+            </ul>
+        </div>
+    )
 }
 const Header = () => {
     return(
       <div>
-        <a>Home</a>
-        <a>News Feed</a>
-        <a>Messagerd</a>
+        <a href='#s'>Home</a>
+        <a href='#s'>News Feed</a>
+        <a href='#s'>Messagerd</a>
       </div>
     );
   }
