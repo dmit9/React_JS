@@ -3,10 +3,10 @@ console.log('SSSS'+s);
 const Navbar = () => {
     return <nav className={s.nav}>
     <div className={s.item}>
-        <a>Profile</a>
+        <a href='/profile'>Profile</a>
     </div>
     <div className={`${s.item} ${s.active}`}>
-        <a>Messages</a>
+        <a href='Dialog'>Messages</a>
     </div>
     <div className={s.item}>
         <a>News</a>
