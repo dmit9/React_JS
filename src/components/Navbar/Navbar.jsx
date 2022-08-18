@@ -1,12 +1,14 @@
-﻿import s from './Navbar.module.css';
-console.log('SSSS'+s);
+﻿import { NavLink } from 'react-router-dom';
+import s from './Navbar.module.css';
+
+const setActive = ({ isActive }) => isActive ? s.active : s.item;
 const Navbar = () => {
-    return <nav className={s.nav}>
+    return (<nav className={s.nav}>
     <div className={s.item}>
-        <a href='/profile'>Profile</a>
+        <NavLink to='/profile' className={setActive} >Profile</NavLink>
     </div>
-    <div className={`${s.item} ${s.active}`}>
-        <a href='Dialog'>Messages</a>
+    <div className={s.item}>
+        <NavLink to='/dialog' className={setActive} >Messages</NavLink>
     </div>
     <div className={s.item}>
         <a>News</a>
@@ -17,7 +19,8 @@ const Navbar = () => {
     <div className={s.item}>
         <a>Settings</a>
     </div>
-</nav>
+</nav> )
 }
 
 export default Navbar;
+
