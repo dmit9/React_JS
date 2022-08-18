@@ -8,7 +8,7 @@ const Navbar = () => {
         <NavLink to='/profile' className={setActive} >Profile</NavLink>
     </div>
     <div className={s.item}>
-        <NavLink to='/dialog' className={setActive} >Messages</NavLink>
+        <NavLink to='/dialogs' className={setActive} >Messages</NavLink>
     </div>
     <div className={s.item}>
         <a>News</a>
@@ -23,4 +23,3 @@ const Navbar = () => {
 }
 
 export default Navbar;
-
