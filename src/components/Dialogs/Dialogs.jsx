@@ -1,4 +1,5 @@
-﻿
+﻿/* eslint-disable array-callback-return */
+
 import { NavLink } from 'react-router-dom';
 import s from './Dialogs.module.css';
 
@@ -15,9 +16,8 @@ const Message = (props) => {
         <div className={s.message}>{props.message}</div>
     )
 }
-
 const Dialogs = (props) => {
-    let dialogsData = [
+    let dialogs = [
         {id: 1, name:'Dima'},
         {id: 2, name:'Andrey'},
         {id: 3, name:'Sveta'},
@@ -25,28 +25,22 @@ const Dialogs = (props) => {
         {id: 5, name:'Viktor'},
         {id: 6, name:'Valera'}
     ]
-    let messagesData = [
+    let messages = [
         {id: 1, message:'HiHi'},
         {id: 2, message:'Yo'},
         {id: 3, message:'Ssss'},
         {id: 4, message:'EEE'},
         {id: 5, message:'AAAr'},
     ]
+    let dialogsElements = dialogs.map( dial => (<DialogItem name={dial.name} id={dial.id}/>));
+    let messagesElements = messages.map( mess => (<Message message={mess.message}/>))
     return (
     <div className={s.dialogs}>
         <div className={s.dialogsItems}>
-            <DialogItem name={dialogsData[0].name} id={dialogsData[0].id}/>
-            <DialogItem name='Andrey' id='2'/>
-            <DialogItem name='Sveta' id='3'/>
-            <DialogItem name='Sacha' id='4'/>
-            <DialogItem name='Viktor' id='5'/>
-            <DialogItem name='Valera' id='6'/>
+            { dialogsElements }
         </div>
         <div className={s.messages}>
-            <Message message={messagesData[0].message}/>
-            <Message message='Yoo'/>
-            <Message message='SSSS'/>
-            <Message message='SSSS'/>
+            { messagesElements }
         </div>
     </div>
         )
