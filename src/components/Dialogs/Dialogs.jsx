@@ -1,21 +1,9 @@
 ﻿/* eslint-disable array-callback-return */
 
-import { NavLink } from 'react-router-dom';
+import Message from './Message/Message';
+import DialogItem from './DialogItem/DialogItem';
 import s from './Dialogs.module.css';
 
-const DialogItem = (props) => {
-    let patch = '/dialogs/'+ props.id
-    return (
-        <div className={s.dialog + ' ' + s.active}>
-                <NavLink to={patch}>{props.name}</NavLink>
-            </div>
-    )
-}
-const Message = (props) => {
-    return (
-        <div className={s.message}>{props.message}</div>
-    )
-}
 const Dialogs = (props) => {
     let dialogs = [
         {id: 1, name:'Dima'},
