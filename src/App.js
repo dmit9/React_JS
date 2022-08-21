@@ -7,19 +7,15 @@ import Profile from './components/Profile/Profile';
 import { Routes, Route } from "react-router-dom";
 
 function App(props) {
-    /* let posts = [
-        {id: 1, message:'fdgdfg', likesCount: 11 },
-        {id: 2, message:'rtrtrrt', likesCount: 15},
-        {id: 3, message:'cvcv', likesCount: 5}
-    ] */
+
   return (
     <div className='app-wrapper'>
             <Header />
             <Navbar />
             <div class='app-wrapper-content'>
                 <Routes>
-                    <Route path="/profile" element={<Profile posts={props.posts}/>}/>
-                    <Route exact path="/dialogs" element={<Dialogs />}/>
+                    <Route exact path="/dialogs" element={<Dialogs state={props.state.dialogsPage}/>}/>
+                    <Route path="/profile" element={<Profile state={props.state.profilePage}/>}/>
                 </Routes>
             </div>
         </div>

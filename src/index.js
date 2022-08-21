@@ -4,17 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
+import state from './redux/state';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const posts = [
-    {id: 1, message:'fdgdfg', likesCount: 11 },
-    {id: 2, message:'rtrtrrt', likesCount: 15},
-    {id: 3, message:'cvcv', likesCount: 5}
-]
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App posts={posts}/>
+      <App state={state}/>
     </BrowserRouter>
   </React.StrictMode>
 );
