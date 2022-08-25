@@ -21,7 +21,7 @@
             {id: 4, message:'EEE'},
             {id: 5, message:'AAAr'},
         ]},
-    sidebarPage:{
+    sidebar:{
         friends:[
             {id: 1, name: '111'},
             {id: 2, name: '222'},
