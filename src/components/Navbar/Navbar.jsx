@@ -1,8 +1,11 @@
 ﻿import { NavLink } from 'react-router-dom';
+import Sidebar from '../Sidebar/sidebar';
 import s from './Navbar.module.css';
 
 const setActive = ({ isActive }) => isActive ? s.active : s.item;
-const Navbar = () => {
+const Navbar = (props) => {
+    const sidebarElem = props.friends.map (f => <Sidebar id={f.id} name={f.name}/>);
+    console.log(sidebarElem);
     return (<nav className={s.nav}>
     <div className={s.item}>
         <NavLink to='/profile' className={setActive} >Profile</NavLink>
@@ -18,6 +21,9 @@ const Navbar = () => {
     </div>
     <div className={s.item}>
         <a>Settings</a>
+    </div>
+    <div className={s.item}>
+        {sidebarElem}
     </div>
 </nav> )
 }
