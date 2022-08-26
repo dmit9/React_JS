@@ -2,11 +2,3 @@
     padding: 10px;
     color: green;
 }
-.itemAll {
-    display: grid;
-    grid-template-columns: 2fr 2fr 2fr ;
-}
-
-.item {
-    margin-top: 10px;
-}

@@ -22,8 +22,11 @@ const Navbar = (props) => {
     <div className={s.item}>
         <a>Settings</a>
     </div>
-    <div className={s.item}>
-        {sidebarElem}
+    <div className={s.friends}>
+        Friends
+        <div className={s.friend}>
+            {sidebarElem}
+        </div>
     </div>
 </nav> )
 }

@@ -3,13 +3,8 @@
 const Sidebar = (props) => {
         return (
         <div className={s.items}>
-            Friends
-            <div className={s.itemAll}>
-                <div className={s.item}>
-                    <span>Friend </span>
-                    <div>{props.name}</div>
-                </div>
-            </div>
+            <span>Friend </span>
+            <div>{props.name}</div>
         </div>
         )
     }
