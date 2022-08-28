@@ -5,7 +5,6 @@ import s from './Navbar.module.css';
 const setActive = ({ isActive }) => isActive ? s.active : s.item;
 const Navbar = (props) => {
     const sidebarElem = props.friends.map (f => <Sidebar id={f.id} name={f.name}/>);
-    console.log(sidebarElem);
     return (<nav className={s.nav}>
     <div className={s.item}>
         <NavLink to='/profile' className={setActive} >Profile</NavLink>

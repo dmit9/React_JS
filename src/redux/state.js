@@ -24,7 +24,9 @@ const state = {
             {id: 3, message:'Ssss'},
             {id: 4, message:'EEE'},
             {id: 5, message:'AAAr'},
-        ]},
+        ],
+        newMessageText:'Ho Ho Ho'
+    },
     sidebar:{
         friends:[
             {id: 1, name: '111'},
@@ -41,14 +43,24 @@ export let addPost = () => {
         likesCount: 0
     };
     state.profilePage.posts.push(newPost);
-    state.props.updateNewPostText = '';
+    state.props.updateNewPostText = '_';
     renderEntireTree(state);
 }
-
+export let addMessage = () => {
+    let newMessage = {
+        id: 5,
+        message: state.dialogsPage.newMessageText
+    };
+    state.dialogsPage.messages.push(newMessage);
+    state.props.updateNewMessageText = '_';
+    renderEntireTree(state);
+}
 export let updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
     renderEntireTree(state);
 }
-
-
+export let updateNewMessageText = (newText) => {
+    state.dialogsPage.newMessageText = newText;
+    renderEntireTree(state);
+}
 export default state;
