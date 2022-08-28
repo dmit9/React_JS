@@ -11,6 +11,7 @@ const Dialogs = (props) => {
     const messagesElements = props.state.messages.map( mess => (<Message message={mess.message}/>));
     const addMessage = () => {
         props.addMessage();
+        props.updateNewMessageText('');
     };
     let oneMessageChange = () =>{
         const text = newMessageElement.current.value;
@@ -29,6 +30,6 @@ const Dialogs = (props) => {
                     ref ={newMessageElement}
                     value={props.state.newMessageText}></textarea>
     </div>
-        )   
+        )
     }
 export default Dialogs;
