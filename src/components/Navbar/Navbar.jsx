@@ -4,7 +4,7 @@ import s from './Navbar.module.css';
 
 const setActive = ({ isActive }) => isActive ? s.active : s.item;
 const Navbar = (props) => {
-    const sidebarElem = props.friends.map (f => <Sidebar id={f.id} name={f.name}/>);
+    /* const sidebarElem = props.friends.map (f => <Sidebar id={f.id} name={f.name}/>); */
     return (<nav className={s.nav}>
     <div className={s.item}>
         <NavLink to='/profile' className={setActive} >Profile</NavLink>
@@ -24,7 +24,7 @@ const Navbar = (props) => {
     <div className={s.friends}>
         Friends
         <div className={s.friend}>
-            {sidebarElem}
+            {/* {sidebarElem} */}
         </div>
     </div>
 </nav> )

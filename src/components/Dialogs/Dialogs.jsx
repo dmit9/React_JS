@@ -5,7 +5,6 @@ import s from './Dialogs.module.css';
 import React from 'react';
 
 const Dialogs = (props) => {
-    console.log(props);
     const newMessageElement = React.createRef();
     const dialogsElements = props.state.dialogs.map( dial => (<DialogItem name={dial.name} id={dial.id}/>));
     const messagesElements = props.state.messages.map( mess => (<Message message={mess.message}/>));
