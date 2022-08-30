@@ -3,17 +3,18 @@ import Message from './Message/Message';
 import DialogItem from './DialogItem/DialogItem';
 import s from './Dialogs.module.css';
 import React from 'react';
+import { addMessageActionCreator, updateNewMessageActionCreator } from '../../redux/state';
 
 const Dialogs = (props) => {
-    const newMessageElement = React.createRef();
-    const dialogsElements = props.state.dialogs.map( dial => (<DialogItem name={dial.name} id={dial.id}/>));
-    const messagesElements = props.state.messages.map( mess => (<Message message={mess.message}/>));
-    const addMessage = () => {
-        props.dispatch({type:'ADD-MESSAGE'});
+    let newMessageElement = React.createRef();
+    let dialogsElements = props.state.dialogs.map( dial => (<DialogItem name={dial.name} id={dial.id}/>));
+    let messagesElements = props.state.messages.map( mess => (<Message message={mess.message}/>));
+    let addMessage = () => {
+        props.dispatch(addMessageActionCreator());
     };
     let oneMessageChange = () =>{
-        const text = newMessageElement.current.value;
-        props.dispatch({type:'UPDATE-NEW-MESSAGE-TEXT', newpText: text});
+        let text = newMessageElement.current.value;
+        props.dispatch(updateNewMessageActionCreator(text));
     }
     return (
     <div className={s.dialogs}>
