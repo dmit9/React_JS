@@ -15,8 +15,9 @@ function App(props) {
                 <Routes>
                     <Route exact path="/dialogs"
                         element={<Dialogs
-                            state={props.state.dialogsPage}
-                            dispatch={props.dispatch} />}/>
+                            store={props.store}
+                            /* state={props.state.dialogsPage} */
+                            /* dispatch={props.dispatch}  */  />}/>
                     <Route path="/profile"
                         element={<Profile
                             profilePage={props.state.profilePage}
