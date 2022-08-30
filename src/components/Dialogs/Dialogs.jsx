@@ -9,12 +9,11 @@ const Dialogs = (props) => {
     const dialogsElements = props.state.dialogs.map( dial => (<DialogItem name={dial.name} id={dial.id}/>));
     const messagesElements = props.state.messages.map( mess => (<Message message={mess.message}/>));
     const addMessage = () => {
-        props.addMessage();
-        props.updateNewMessageText('');
+        props.dispatch({type:'ADD-MESSAGE'});
     };
     let oneMessageChange = () =>{
         const text = newMessageElement.current.value;
-        props.updateNewMessageText(text);
+        props.dispatch({type:'UPDATE-NEW-MESSAGE-TEXT', newpText: text});
     }
     return (
     <div className={s.dialogs}>
