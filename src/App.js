@@ -10,15 +10,13 @@ function App(props) {
   return (
     <div className='app-wrapper'>
             <Header />
-            <Navbar friends={props.state.sidebar.friends}/>
+            <Navbar /* friends={props.state.sidebar.friends} *//>
             <div className='app-wrapper-content'>
                 <Routes>
                     <Route exact path="/dialogs"
-                        element={<DialogsContainer
-                            store={props.store} />}/>
+                        element={<DialogsContainer/>}/>
                     <Route path="/profile"
-                        element={<Profile
-                            store={props.store} />}/>
+                        element={<Profile />}/>
                 </Routes>
             </div>
         </div>
