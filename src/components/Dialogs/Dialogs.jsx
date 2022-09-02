@@ -5,6 +5,7 @@ import s from './Dialogs.module.css';
 import React from 'react';
 
 const Dialogs = (props) => {
+    /* debugger; */
     let state = props.dialogsPage;
     let dialogsElements = state.dialogs.map( dial => (<DialogItem name={dial.name} id={dial.id}/>));
     let messagesElements = state.messages.map( mess => (<Message message={mess.message}/>));
@@ -24,10 +25,14 @@ const Dialogs = (props) => {
         <div className={s.messages}>
             <div>{ messagesElements }</div>
         <div>
-            <div><textarea placeholder='Enter message'
+            <div>
+                <textarea placeholder='Enter message'
                     onChange={onNewMessageChange}
-                    value={newMessageBody}></textarea></div>
-            <div><button onClick={ onSendMessageClick }>addMessage</button></div>
+                    value={newMessageBody}></textarea>
+            </div>
+            <div>
+                <button onClick={ onSendMessageClick }>addMessage</button>
+            </div>
         </div>
         </div>
     </div>

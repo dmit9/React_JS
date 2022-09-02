@@ -3,13 +3,11 @@ import reportWebVitals from './reportWebVitals';
 import store from './redux/redux-store';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import { BrowserRouter } from "react-router-dom";
-import {Provider} from './StoreContext';
+import {Provider} from 'react-redux';
 
-const renderEntireTree = (state) => {
-   /*  debugger; */
+const renderEntireTree = () => {
     const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(
     <React.StrictMode>
@@ -21,12 +19,10 @@ const renderEntireTree = (state) => {
     </React.StrictMode>
     );
 }
-
-renderEntireTree(store.getState());
+renderEntireTree();
 
 store.subscribe( () => {
-    let state = store.getState();
-    renderEntireTree(state);
+    renderEntireTree();
 });
 
 reportWebVitals(renderEntireTree);
