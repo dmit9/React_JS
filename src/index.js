@@ -21,8 +21,4 @@ const renderEntireTree = () => {
 }
 renderEntireTree();
 
-store.subscribe( () => {
-    renderEntireTree();
-});
-
 reportWebVitals(renderEntireTree);
