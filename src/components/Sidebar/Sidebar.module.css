@@ -1,4 +1,15 @@
 ﻿.items {
-    padding: 10px;
+    padding: 5px;
     color: green;
+}
+.friends {
+    margin-top: 5px;
+    padding: 5px;
+    color: green;
+}
+
+.friend {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    border: 5px;
 }

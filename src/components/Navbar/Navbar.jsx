@@ -1,5 +1,6 @@
 ﻿import { NavLink } from 'react-router-dom';
 import Sidebar from '../Sidebar/sidebar';
+import SidebarContainer from '../Sidebar/sidebarContainer';
 import s from './Navbar.module.css';
 
 const setActive = ({ isActive }) => isActive ? s.active : s.item;
@@ -23,8 +24,8 @@ const Navbar = (props) => {
     </div>
     <div className={s.friends}>
         Friends
-        <div className={s.friend}>
-            {/* {sidebarElem} */}
+        <div >
+            <SidebarContainer />
         </div>
     </div>
 </nav> )

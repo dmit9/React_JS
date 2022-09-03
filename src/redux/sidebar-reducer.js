@@ -1,10 +1,9 @@
 ﻿let initialState = {
-    posts: [
-        {id: 1, message:'fdgdfg', likesCount: 11 },
-        {id: 2, message:'rtrtrrt', likesCount: 15},
-        {id: 3, message:'cvcv', likesCount: 5},
-    ],
-    newPostText:''
+    friends:[
+        {id: 1, name: '111'},
+        {id: 2, name: '222'},
+        {id: 3, name: '333'}
+    ]
 };
 
 const sidebarReducer =(state = initialState, action) => {
