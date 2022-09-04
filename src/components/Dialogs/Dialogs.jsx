@@ -5,10 +5,9 @@ import s from './Dialogs.module.css';
 import React from 'react';
 
 const Dialogs = (props) => {
-    /* debugger; */
     let state = props.dialogsPage;
-    let dialogsElements = state.dialogs.map( dial => (<DialogItem name={dial.name} id={dial.id}/>));
-    let messagesElements = state.messages.map( mess => (<Message message={mess.message}/>));
+    let dialogsElements = state.dialogs.map( dial => (<DialogItem name={dial.name} id={dial.id} key={dial.id}/>));
+    let messagesElements = state.messages.map( mess => (<Message message={mess.message} key={mess.id}/>));
     let newMessageBody = state.newMessageBody;
     let onSendMessageClick = () => {
         props.onSendMessage();
