@@ -4,17 +4,18 @@ import DialogItem from './DialogItem/DialogItem';
 import s from './Dialogs.module.css';
 import React from 'react';
 
-const Dialogs = (props) => {
-    let state = props.dialogsPage;
+class Dialogs extends React.Component {
+    render() {
+    let state = this.props.dialogsPage;
     let dialogsElements = state.dialogs.map( dial => (<DialogItem name={dial.name} id={dial.id} key={dial.id}/>));
     let messagesElements = state.messages.map( mess => (<Message message={mess.message} key={mess.id}/>));
     let newMessageBody = state.newMessageBody;
     let onSendMessageClick = () => {
-        props.onSendMessage();
+        this.props.onSendMessage();
     };
     let onNewMessageChange = (e) =>{
         let body = e.target.value;
-        props.updateNewMessageBody(body);
+        this.props.updateNewMessageBody(body);
     }
     return (
     <div className={s.dialogs}>
@@ -36,5 +37,6 @@ const Dialogs = (props) => {
         </div>
     </div>
         )
-    }
+    }}
+
 export default Dialogs;
