@@ -5,14 +5,13 @@ const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const SET_TOTAL_USERs_COUNT = 'SET_TOTAL_USERs_COUNT';
 
 let initialState = {
-        users:[  ],
+        users:[ ],
         pageSize: 7,
         totalUsersCount: 0,
         currentPage: 1
 };
 
 const usersReducer =(state = initialState, action) => {
-
     switch (action.type) {
         case FOLLOW:
             return {
