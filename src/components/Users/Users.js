@@ -2,7 +2,7 @@
 import userPhoto from '../../asserts/images/userPhoto.png'
 import styles from './users.module.css'
 import { NavLink } from 'react-router-dom';
-import axios from 'axios';
+import { usersAPI } from '../../api/api';
 
 let Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -32,8 +32,8 @@ let Users = (props) => {
                 </div>
                 <div>
                     {u.followed ?
-                     <button onClick={() => {
-                        axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
+                     <button onClick={() => {usersAPI.getUnfollow(u.id, props.unfollow(u.id))
+                        /* axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
                             {withCredentials: true,
                             headers: {
                                 "API-KEY" : "262aa461-2d7c-4f6b-9534-6fa2f316253a"
@@ -43,11 +43,10 @@ let Users = (props) => {
                                 if ( response.data.resultCode == 0 ) {
                                     props.unfollow(u.id);
                                 }
-                        });
-
-                    }}>UnFollow</button> :
-                     <button onClick={() => {
-                        axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {},
+                        }); */
+                                        }}>UnFollow</button> :
+                     <button onClick={() => {usersAPI.getfollow(u.id, props.follow(u.id))
+                        /* axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {},
                         {withCredentials: true,
                             headers: {
                                 "API-KEY" : "262aa461-2d7c-4f6b-9534-6fa2f316253a"
@@ -57,9 +56,8 @@ let Users = (props) => {
                                 if ( response.data.resultCode == 0 ) {
                                     props.follow(u.id);
                                 }
-                        });
-
-                        }}>Follow</button>}
+                        }); */
+                                        }}>Follow</button>}
                 </div>
             </span>
             <span>
