@@ -32,7 +32,9 @@ let Users = (props) => {
                 </div>
                 <div>
                     {u.followed ?
-                     <button onClick={() => {usersAPI.getUnfollow(u.id, props.unfollow(u.id))
+                     <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+                        props.toggleFollowingProgress(true, u.id);
+                        usersAPI.getUnfollow(u.id, props.unfollow(u.id));
                         /* axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
                             {withCredentials: true,
                             headers: {
@@ -44,8 +46,11 @@ let Users = (props) => {
                                     props.unfollow(u.id);
                                 }
                         }); */
+                        props.toggleFollowingProgress(false, u.id);
                                         }}>UnFollow</button> :
-                     <button onClick={() => {usersAPI.getfollow(u.id, props.follow(u.id))
+                     <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+                        props.toggleFollowingProgress(true, u.id);
+                        usersAPI.getfollow(u.id, props.follow(u.id));
                         /* axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {},
                         {withCredentials: true,
                             headers: {
@@ -57,6 +62,7 @@ let Users = (props) => {
                                     props.follow(u.id);
                                 }
                         }); */
+                        props.toggleFollowingProgress(false, u.id);
                                         }}>Follow</button>}
                 </div>
             </span>
