@@ -43,10 +43,9 @@ export const addPostActionCreator = () => ({ type: ADD_POST })
 export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile })
 export const updateNewPostTextActionCreator = (text) => ({ type: UPDATE_NEW_POST_TEXT, newText: text })
 
-export const UserProfileThunkCreator = (userId) => {
+export const getUserProfile = (userId) => {
     return (dispatch) => {
-            if(!userId) {userId = 2;}
-            usersAPI.getUserProfile(userId)
+            usersAPI.getProfile(userId)
                 .then(response => {
                     dispatch(setUserProfile(response.data));
             });

@@ -15,17 +15,19 @@ export const usersAPI = {
             });
     },
     getUnfollow(userId) {
-        return instance.delete(`/follow/${userId}`
+        return instance.delete(`follow/${userId}`
         )
     },
     getfollow(userId) {
-        return instance.post(`/follow/${userId}`
+        return instance.post(`follow/${userId}`
         )
     },
-    getAuthUserData() {
-        return instance.get('/auth/me')
-    },
-    getUserProfile(userId) {
-        return instance.get(`/profile/${userId}`)
-    },
+    getProfile(userId) {
+          return instance.get('profile/'+userId)
+    }
 }
+
+export const authAPI = {
+    me() {
+    return instance.get('auth/me')
+}}
