@@ -1,4 +1,4 @@
-﻿import { authAPI, usersAPI } from "../api/api";
+﻿import { authAPI } from "../api/api";
 
 const SET_USER_DATA = 'SET_USER_DATA';
 
@@ -15,7 +15,7 @@ const authReducer =(state = initialState, action) => {
             return {
                 ...state,
                 ...action.data,
-                isAuth: false
+                isAuth: true
             }
         default:
             return state;
