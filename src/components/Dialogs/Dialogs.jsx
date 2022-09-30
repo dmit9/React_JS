@@ -4,9 +4,12 @@ import DialogItem from './DialogItem/DialogItem';
 import React from 'react';
 import s from './Dialogs.module.css';
 import { Navigate } from "react-router-dom";
+import { Textarea } from '../common/FormsControls/FormsControls';
+import { maxLengthCreator, required } from '../../utils/validators/validators';
+
+const maxLength10 = maxLengthCreator(50);
 
 const Dialogs = (props) => {
-
     let state = props.dialogsPage;
     let dialogsElements = state.dialogs.map( dial => (<DialogItem name={dial.name} id={dial.id} key={dial.id}/>));
     let messagesElements = state.messages.map( mess => (<Message message={mess.message} key={mess.id}/>));
@@ -33,7 +36,8 @@ const AddMessageForm = (props) => {
         return (
             <form onSubmit={props.handleSubmit}>
                 <div>
-                    <Field component="textarea" name="newMessageBody" placeholder="Enter your message" />
+                    <Field component={Textarea} name="newMessageBody" placeholder="Enter your message"
+                            validate={[required, maxLength10]}/>
                 </div>
                 <button >Send</button>
             </form>
