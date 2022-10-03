@@ -50,6 +50,5 @@ export default compose (
         toggleFollowingProgress,
         getUsers: getUsersThunkCreator,
         onPageChangedThunkCreator
-        }),
-    withAuthRedirect
+        })
 ) (UsersContainer);

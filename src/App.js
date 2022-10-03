@@ -6,10 +6,21 @@ import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import LoginPage from './components/Login/Login';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { initializeApp } from './redux/app-reducer'
+import { compose } from 'redux';
+import Preloader from './components/Preloader/Preloader';
 
-function App(props) {
-  return (
-    <div className='app-wrapper'>
+class App extends Component {
+    componentDidMount() {
+        this.props.initializeApp();
+    }
+    render() {
+        if (!this.props.initialized) {
+            return <Preloader /> }
+        return (
+            <div className='app-wrapper'>
             <HeaderContainer />
             <Navbar  />
             <div className='app-wrapper-content'>
@@ -26,8 +37,13 @@ function App(props) {
                         element={ < LoginPage />}/>
                 </Routes>
             </div>
-        </div>
-  );
-}
+                </div>
+          );
+}}
 
-export default App;
+const mapStateToProps = (state) => ({
+    initialized: state.app.initialized
+})
+
+export default compose(
+    connect(mapStateToProps, {initializeApp})) (App);
