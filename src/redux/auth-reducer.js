@@ -32,7 +32,7 @@ export const getAuthUserData = () => (dispatch) => {
                         let {id, login, email} = response.data.data;
                         dispatch(setAuthUserData(id, email , login , true));
                     }
-            }); 
+            });
 }
 export const login = (email, password, rememberMe) => (dispatch) => {
     authAPI.login(email, password, rememberMe)
