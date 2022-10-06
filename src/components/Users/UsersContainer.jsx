@@ -59,7 +59,6 @@ export default compose (
         unfollow,
         setCurrentPage,
         toggleFollowingProgress,
-        getUsers: getUsersThunkCreator,
-       /*  onPageChangedThunkCreator */
-        })
+        getUsers: getUsersThunkCreator
+          })
 ) (UsersContainer);
