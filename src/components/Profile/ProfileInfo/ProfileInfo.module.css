@@ -1,3 +1,7 @@
 ﻿.descriptionBlock {
     padding: 10px;
 }
+
+.mainPhoto {
+    max-width: 80px;
+}
