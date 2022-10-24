@@ -15,14 +15,14 @@ const onMainPhotoSelected = (e) => {
         savePhoto(e.target.files[0]);
     }
 }
-const onSubmit =(formData) => {
-    console.log(formData)
+const onSubmit =  (formData) => {
     saveProfile(formData).then(
         () => {
             setEditMode(false);
         }
     );
     }
+
     return (
     <div>
         <div className={s.descriptionBlock}>
