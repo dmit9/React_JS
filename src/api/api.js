@@ -67,3 +67,4 @@ export const securityAPI = {
         return instance.get('security/get-captcha-url');
     }
 }
+//
