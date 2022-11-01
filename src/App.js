@@ -1,6 +1,6 @@
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import UsersContainer from './components/Users/UsersContainer';
 import LoginPage from './components/Login/Login';
 import React, { Component, Suspense } from 'react';
@@ -14,8 +14,16 @@ const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsCo
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
 
 class App extends Component {
+    catchAllUnhandledErrors = (PromiseRejectionEvent) => {
+        /* alert('Some error occured') */
+        console.log(PromiseRejectionEvent);
+    }
     componentDidMount() {
         this.props.initializeApp();
+        window.addEventListener('unhandledrejection', this.catchAllUnhandledErrors)
+    }
+    componentWillUnmount() {
+        window.removeEventListener('unhandledrejection', this.catchAllUnhandledErrors)
     }
     render() {
         if (!this.props.initialized) {
@@ -27,6 +35,8 @@ class App extends Component {
             <Suspense fallback={<div><Preloader /></div>}>
                 <div className='app-wrapper-content'>
                 <Routes>
+                    <Route exact path="/"
+                        element={<ProfileContainer />}/>
                     <Route exact path="/dialogs"
                         element={<DialogsContainer/>}/>
                     <Route path="/profile/:userId"
