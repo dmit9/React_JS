@@ -33,9 +33,9 @@ class App extends Component {
                         element={<ProfileContainer />}/>
                     <Route path="/profile"
                         element={<ProfileContainer />}/>
-                    <Route path="/users*"
+                    <Route path="/users/*"
                         element={ <UsersContainer />}/>
-                    <Route path="/login*"
+                    <Route path="/login/*"
                         element={ < LoginPage />}/>
                 </Routes>
                 </div>

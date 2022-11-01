@@ -51,12 +51,19 @@ export const profileAPI = {
 
 export const authAPI = {
     me() {
-    return instance.get('auth/me');
-},
-login(email, password, rememberMe = false) {
-    return instance.post('auth/login', { email, password, rememberMe });
-},
-logout() {
-    return instance.delete('auth/login');
+       /*  debugger; */
+        return instance.get('auth/me');
+    },
+    login(email, password, rememberMe = false, captcha= null) {
+      /*   debugger; */
+        return instance.post('auth/login', { email, password, rememberMe , captcha });
+    },
+    logout() {
+        return instance.delete('auth/login');
+    }
 }
+export const securityAPI = {
+    getCaptchaUrl() {
+        return instance.get('security/get-captcha-url');
+    }
 }

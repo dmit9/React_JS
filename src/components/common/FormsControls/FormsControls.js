@@ -21,15 +21,6 @@ export const Textarea = (props) => {
 export const Input = (props) => {
     const {input, meta, child, ...restProps} = props;
     return ( <FormControl {...props}><input {...input} {...restProps}/></FormControl> )
-   /*  const hasError = meta.touched && meta.error;
-    return (
-        <div className={styles.formControl + " " + (hasError ? styles.error : "")}>
-            <div>
-                <input {...input} {...props}/>
-            </div>
-            { hasError && <span>{meta.error}</span>}
-        </div>
-    ) */
 }
 export const createField = (placeholder, name, validators, component, props = {}, text = "") => {
     return <div>
